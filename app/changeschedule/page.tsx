@@ -46,22 +46,22 @@ export default function ChangeSchedule() {
             
             if(document.querySelector('#mon')) {
                 //@ts-ignore
-                document.querySelector('#mon').value = identifer[1][0];
+                document.querySelector('#mon').value = identifer[1][1];
                 //@ts-ignore
-                document.querySelector("#tue").value = identifer[1][1];
+                document.querySelector("#tue").value = identifer[1][2];
                 //@ts-ignore
-                document.querySelector("#wed").value = identifer[1][2];
+                document.querySelector("#wed").value = identifer[1][3];
                 //@ts-ignore
-                document.querySelector("#thurs").value = identifer[1][3];
+                document.querySelector("#thurs").value = identifer[1][4];
                 //@ts-ignore
-                document.querySelector("#fri").value = identifer[1][4];
+                document.querySelector("#fri").value = identifer[1][5];
                 //@ts-ignore
-                document.querySelector("#sat").value = identifer[1][5];
+                document.querySelector("#sat").value = identifer[1][6];
                 //@ts-ignore
-                document.querySelector("#sun").value = identifer[1][6];
+                document.querySelector("#sun").value = identifer[1][0];
             }
-
-        }
+        } else
+            setPerson([person[0], "-1", "-1"]);
     }
 
     const updateScheduleForm = (e: any, i: number) => {
@@ -82,12 +82,12 @@ export default function ChangeSchedule() {
 
     }
 
-    const peopleMenu = <select name="Member" onChange={memberFound} defaultValue="-1">
-        <option value="-1">Select</option>
-        {
-            people.map((x: any, i: number) => <option key={i} value={[x[0], x[2]]}>{x[1]}</option>)
-        }
-    </select>
+    // const peopleMenu = <select name="Member" onChange={memberFound} defaultValue="-1">
+    //     <option value="-1">Select</option>
+    //     {
+    //         people.map((x: any, i: number) => <option key={i} value={[x[0], x[2]]}>{x[1]}</option>)
+    //     }
+    // </select>
 
     return (
         <>
@@ -119,7 +119,7 @@ export default function ChangeSchedule() {
                     person[1] != "-1" && 
                         <>
                             <label>Monday</label>
-                            <select id="mon" defaultValue={person[2][0]} onChange={e => updateScheduleForm(e, 0)}>
+                            <select id="mon" defaultValue={person[2][1]} onChange={e => updateScheduleForm(e, 1)}>
                                 <option value={0}>Off</option>
                                 <option value={1}>Morning</option>
                                 <option value={2}>Evening</option>
@@ -127,7 +127,7 @@ export default function ChangeSchedule() {
                             </select>    
 
                             <label>Tuesday</label>
-                            <select id="tue" defaultValue={person[2][1]} onChange={e => updateScheduleForm(e, 1)}>
+                            <select id="tue" defaultValue={person[2][2]} onChange={e => updateScheduleForm(e, 2)}>
                                 <option value={0}>Off</option>
                                 <option value={1}>Morning</option>
                                 <option value={2}>Evening</option>
@@ -135,7 +135,7 @@ export default function ChangeSchedule() {
                             </select>
 
                             <label>Wednesday</label>
-                            <select id="wed" defaultValue={person[2][2]} onChange={e => updateScheduleForm(e, 2)}>
+                            <select id="wed" defaultValue={person[2][3]} onChange={e => updateScheduleForm(e, 3)}>
                                 <option value={0}>Off</option>
                                 <option value={1}>Morning</option>
                                 <option value={2}>Evening</option>
@@ -143,7 +143,7 @@ export default function ChangeSchedule() {
                             </select>
 
                             <label>Thursday</label>
-                            <select id="thurs" defaultValue={person[2][3]} onChange={e => updateScheduleForm(e, 3)}>
+                            <select id="thurs" defaultValue={person[2][4]} onChange={e => updateScheduleForm(e, 4)}>
                                 <option value={0}>Off</option>
                                 <option value={1}>Morning</option>
                                 <option value={2}>Evening</option>
@@ -151,7 +151,7 @@ export default function ChangeSchedule() {
                             </select>
 
                             <label>Friday</label>
-                            <select id="fri" defaultValue={person[2][4]} onChange={e => updateScheduleForm(e, 4)}>
+                            <select id="fri" defaultValue={person[2][5]} onChange={e => updateScheduleForm(e, 5)}>
                                 <option value={0}>Off</option>
                                 <option value={1}>Morning</option>
                                 <option value={2}>Evening</option>
@@ -159,7 +159,7 @@ export default function ChangeSchedule() {
                             </select>
 
                             <label>Saturday</label>
-                            <select id="sat" defaultValue={person[2][5]} onChange={e => updateScheduleForm(e, 5)}>
+                            <select id="sat" defaultValue={person[2][6]} onChange={e => updateScheduleForm(e, 6)}>
                                 <option value={0}>Off</option>
                                 <option value={1}>Morning</option>
                                 <option value={2}>Evening</option>
@@ -167,7 +167,7 @@ export default function ChangeSchedule() {
                             </select>
 
                             <label>Sunday</label>
-                            <select id="sun" defaultValue={person[2][6]} onChange={e => updateScheduleForm(e, 6)}>
+                            <select id="sun" defaultValue={person[2][0]} onChange={e => updateScheduleForm(e, 0)}>
                                 <option value={0}>Off</option>
                                 <option value={1}>Morning</option>
                                 <option value={2}>Evening</option>

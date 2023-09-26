@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const NavBar = ({ options = true }: {options?:boolean}) => {
+export default function NavBar({ options = true }: {options?:boolean}) {
     return (
         <div className="bg-black text-white flex justify-between">
             <Link href="/">Schedule Manager</Link>
@@ -13,5 +13,3 @@ const NavBar = ({ options = true }: {options?:boolean}) => {
         </div>
     )
 }
-
-export default NavBar
