@@ -109,7 +109,7 @@ export default function ChangeSchedule() {
                         <select id="peoplelist" onChange={memberFound} defaultValue="-1">
                             <option value="-1">Select</option>
                             {
-                                people.map((x: any, i: number) => <option key={i} value={[x[0], x[2]]}>{x[1]}</option>)
+                                people.map((x: any, i: number) => <option key={i} value={[x[0], x[2]]}>{x[0]}: {x[1]}</option>)
                             }
                         </select>
                     </>
