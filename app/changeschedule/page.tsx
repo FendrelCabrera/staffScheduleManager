@@ -90,95 +90,97 @@ export default function ChangeSchedule() {
     // </select>
 
     return (
-        <>
+        <div className = "div-containers">
             <NavBar />
-
-            <form onSubmit={submitHandler} className="grid gap-y-10">
-                <div className="grid grid-cols-2">
-                    <label>Section</label>
-                    <select name="Section" onChange={populate} defaultValue={-1}>
-                        <option value="-1">Select</option>
-                        <option value="assist">Lib Assistant</option>
-                        <option value="helper">Lib Helper</option>
-                        <option value="dlStaff">Digital Library</option>
-                    </select>
+            <div className="form-container">
                 
-                    {
-                    people && <>
-                        <label>Member</label>
-                        <select id="peoplelist" onChange={memberFound} defaultValue="-1">
-                            <option value="-1">Select</option>
-                            {
-                                people.map((x: any, i: number) => <option key={i} value={[x[0], x[2]]}>{x[0]}: {x[1]}</option>)
-                            }
+                <form onSubmit={submitHandler} className="form">
+                    <div className="grid grid-cols-2 gap-y-5">
+                        <label>Section</label>
+                        <select name="Section" onChange={populate} defaultValue={-1}>
+                            <option className="drop-down" value="-1">Select</option>
+                            <option className="drop-down" value="assist">Lib Assistant</option>
+                            <option className="drop-down" value="helper">Lib Helper</option>
+                            <option className="drop-down" value="dlStaff">Digital Library</option>
                         </select>
-                    </>
-                    }
-
-                    {
-                    person[1] != "-1" && 
-                        <>
-                            <label>Monday</label>
-                            <select id="mon" defaultValue={person[2][1]} onChange={e => updateScheduleForm(e, 1)}>
-                                <option value={0}>Off</option>
-                                <option value={1}>Morning</option>
-                                <option value={2}>Evening</option>
-                                <option value={3}>Night</option>
-                            </select>    
-
-                            <label>Tuesday</label>
-                            <select id="tue" defaultValue={person[2][2]} onChange={e => updateScheduleForm(e, 2)}>
-                                <option value={0}>Off</option>
-                                <option value={1}>Morning</option>
-                                <option value={2}>Evening</option>
-                                <option value={3}>Night</option>
-                            </select>
-
-                            <label>Wednesday</label>
-                            <select id="wed" defaultValue={person[2][3]} onChange={e => updateScheduleForm(e, 3)}>
-                                <option value={0}>Off</option>
-                                <option value={1}>Morning</option>
-                                <option value={2}>Evening</option>
-                                <option value={3}>Night</option>
-                            </select>
-
-                            <label>Thursday</label>
-                            <select id="thurs" defaultValue={person[2][4]} onChange={e => updateScheduleForm(e, 4)}>
-                                <option value={0}>Off</option>
-                                <option value={1}>Morning</option>
-                                <option value={2}>Evening</option>
-                                <option value={3}>Night</option>
-                            </select>
-
-                            <label>Friday</label>
-                            <select id="fri" defaultValue={person[2][5]} onChange={e => updateScheduleForm(e, 5)}>
-                                <option value={0}>Off</option>
-                                <option value={1}>Morning</option>
-                                <option value={2}>Evening</option>
-                                <option value={3}>Night</option>
-                            </select>
-
-                            <label>Saturday</label>
-                            <select id="sat" defaultValue={person[2][6]} onChange={e => updateScheduleForm(e, 6)}>
-                                <option value={0}>Off</option>
-                                <option value={1}>Morning</option>
-                                <option value={2}>Evening</option>
-                                <option value={3}>Night</option>
-                            </select>
-
-                            <label>Sunday</label>
-                            <select id="sun" defaultValue={person[2][0]} onChange={e => updateScheduleForm(e, 0)}>
-                                <option value={0}>Off</option>
-                                <option value={1}>Morning</option>
-                                <option value={2}>Evening</option>
-                                <option value={3}>Night</option>
+                    
+                        {
+                        people && <>
+                            <label>Member</label>
+                            <select id="peoplelist" onChange={memberFound} defaultValue="-1">
+                                <option className="drop-down" value="-1">Select</option>
+                                {
+                                    people.map((x: any, i: number) => <option key={i} value={[x[0], x[2]]}>{x[0]}: {x[1]}</option>)
+                                }
                             </select>
                         </>
-                    }
-                </div>
+                        }
 
-                <input type="submit" value="Submit" />
-            </form>
-        </>
+                        {
+                        person[1] != "-1" && 
+                            <>
+                                <label>Monday</label>
+                                <select id="mon" defaultValue={person[2][1]} onChange={e => updateScheduleForm(e, 1)}>
+                                    <option className="drop-down" value={0}>Off</option>
+                                    <option className="drop-down" value={1}>Morning</option>
+                                    <option className="drop-down" value={2}>Evening</option>
+                                    <option className="drop-down" value={3}>Night</option>
+                                </select>    
+
+                                <label>Tuesday</label>
+                                <select id="tue" defaultValue={person[2][2]} onChange={e => updateScheduleForm(e, 2)}>
+                                    <option className="drop-down" value={0}>Off</option>
+                                    <option className="drop-down" value={1}>Morning</option>
+                                    <option className="drop-down" value={2}>Evening</option>
+                                    <option className="drop-down" value={3}>Night</option>
+                                </select>
+
+                                <label>Wednesday</label>
+                                <select id="wed" defaultValue={person[2][3]} onChange={e => updateScheduleForm(e, 3)}>
+                                    <option className="drop-down" value={0}>Off</option>
+                                    <option className="drop-down" value={1}>Morning</option>
+                                    <option className="drop-down" value={2}>Evening</option>
+                                    <option className="drop-down" value={3}>Night</option>
+                                </select>
+
+                                <label>Thursday</label>
+                                <select id="thurs" defaultValue={person[2][4]} onChange={e => updateScheduleForm(e, 4)}>
+                                    <option className="drop-down" value={0}>Off</option>
+                                    <option className="drop-down" value={1}>Morning</option>
+                                    <option className="drop-down" value={2}>Evening</option>
+                                    <option className="drop-down" value={3}>Night</option>
+                                </select>
+
+                                <label>Friday</label>
+                                <select id="fri" defaultValue={person[2][5]} onChange={e => updateScheduleForm(e, 5)}>
+                                    <option className="drop-down" value={0}>Off</option>
+                                    <option className="drop-down" value={1}>Morning</option>
+                                    <option className="drop-down" value={2}>Evening</option>
+                                    <option className="drop-down" value={3}>Night</option>
+                                </select>
+
+                                <label>Saturday</label>
+                                <select id="sat" defaultValue={person[2][6]} onChange={e => updateScheduleForm(e, 6)}>
+                                    <option value={0}>Off</option>
+                                    <option value={1}>Morning</option>
+                                    <option value={2}>Evening</option>
+                                    <option value={3}>Night</option>
+                                </select>
+
+                                <label>Sunday</label>
+                                <select id="sun" defaultValue={person[2][0]} onChange={e => updateScheduleForm(e, 0)}>
+                                    <option className="drop-down" value={0}>Off</option>
+                                    <option className="drop-down" value={1}>Morning</option>
+                                    <option className="drop-down" value={2}>Evening</option>
+                                    <option className="drop-down" value={3}>Night</option>
+                                </select>
+                            </>
+                        }
+                    </div>
+
+                    <input type="submit" value="Submit" className="submit-button" />
+                </form>
+            </div>
+        </div>
     )
 }

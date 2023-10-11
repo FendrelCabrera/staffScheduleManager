@@ -1,0 +1,27 @@
+.home{
+    display: flex;
+    justify-content:left;
+    background-image: url('../public/nitc.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 50%;
+    
+}
+.welcome-container{
+    flex:1;
+    display: flex;
+    justify-content:center;
+    align-items:flex-end;
+}
+.welcome{
+    /* width: 50%; */
+    font-size: 24px;
+    color: whitesmoke;
+    height: 100px;
+    width: 750px;
+    background-color: rgba(0, 0, 0,0.7);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+}

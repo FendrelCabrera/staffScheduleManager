@@ -2,6 +2,7 @@
 import { FormEvent } from "react";
 import NavBar from "../navbar";
 import { addStaff } from "../helper";
+import "./addstaff.css";
 
 export default function NewStaff() {
 
@@ -19,27 +20,30 @@ export default function NewStaff() {
     }
 
     return (
-        <>
+        <div className="div-containers">
             <NavBar />
             
-            <form onSubmit={submitHandler} className="grid gap-y-10">
-                <div className="grid grid-cols-2">
-                    <label>Section</label>
-                    <select id="deptselect">
-                        <option value="assist">Lib Assistant</option>
-                        <option value="helper">Lib Helper</option>
-                        <option value="dlStaff">Digital Library</option>
-                    </select>
-                
-                    <label>Staff Code</label>
-                    <input id="newstaffcode" required></input>
-                
-                    <label>Name</label>
-                    <input id="newstaffname" required></input>
-                </div>
+            <div className ="form-container">
 
-                <input type="submit" value="Submit" />
-            </form>
-        </>
+                <form onSubmit={submitHandler} className="form" >
+                    <div className="grid grid-cols-2 gap-y-5">
+                        <label className="input-label">Section</label>
+                        <select className="selected-option" id="deptselect">
+                            <option className="drop-down" value="assist">Lib Assistant</option>
+                            <option className="drop-down" value="helper">Lib Helper</option>
+                            <option className="drop-down" value="dlStaff">Digital Library</option>
+                        </select>
+                    
+                        <label className="input-label">Staff Code</label>
+                        <input id="newstaffcode" className='input' required></input>
+                    
+                        <label className="input-label">Name</label>
+                        <input id="newstaffname" className="input" required></input>
+                    </div>
+
+                    <div className="button-container"><input type="submit" value="Submit" className="submit-button" /></div>
+                </form>
+            </div>
+        </div>
     )
 }

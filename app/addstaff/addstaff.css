@@ -1,0 +1,32 @@
+.div-containers{
+    display: flex;
+}
+.form-container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(205, 205, 205);
+}
+.form{
+    background-color: white;
+    border: 1px solid black;
+    padding-block: 50px;
+    padding-inline: 25px;
+    border-radius: 5px;
+}
+.drop-down ,.selected-option{
+    padding-inline: 5px;
+    padding-block: 2.5px;
+}
+.input, .input-label{
+    margin-block: 5px;
+}
+
+.button-container{
+    width:100%;
+    margin-top:25px;
+    display: flex;
+    justify-content: center;
+}
+
